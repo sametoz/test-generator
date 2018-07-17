@@ -1,0 +1,164 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<body>
+</body>
+<style> 
+div.uyari{
+   font-family: Arial, Helvetica, sans-serif;
+background-color:red;
+text-align:center;
+}
+     body{
+         background-color:rgba(210, 210, 247, 0.87) 
+    } 
+    p{
+     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    }
+    input.in{
+    margin:initial;
+    width: 20%;
+    height: 30%;
+    padding: 5px;
+    outline-width: 1px;
+      outline-color: black;
+      outline-style:ridge;
+    }
+    textarea{
+        
+    outline-width: 1px;
+    outline-color: black;
+    outline-style:ridge;
+    }
+    div.container{
+    background: rgb(113, 176, 179); 
+    position:unset;        
+    width: 70%;
+    border: 5px solid lightblue;
+    padding: 50px;
+        outline-width: 0px;
+      outline-color: black;
+      outline-style:auto;}
+    
+</style>
+<form action="/yeni/create" method="post"  onsubmit="return false;" id="formkontrol">
+<div  class="container">
+    <div class="bolum"> 
+        <select class="in" name="bolum" id="bolum" >
+            <option value="Bolum Seçiniz">Bolum Seçiniz</option>
+            <option value="Bilgisayar Mühendisliği" id="bil.müh" name="bil.müh" >Bilgisayar Mühendisliği</option>
+            <option value="Yönetim Bilişim Sistemleri" id="ybs">Yönetim Bilişim Sistemleri</option>
+        </select>* 
+    </div><br>
+    <div class="ders"> 
+        <select class="ders" name="ders" id="ders">
+            <option>Ders Seçiniz</option>
+            <option value="Algoritma ve Programlama" id="1" name="Algoritma ve Programlama">Algoritma ve Programlama</option>
+            <option value="Veri Tabanı" id="1">Veri Tabanı</option>
+        </select> *
+    </div><br>
+    <div class="konu"> 
+        <select class="in" name="konu" id="konu">
+            <option>Konu Seçiniz</option>
+            <option  name ="Arrays(diziler)" value="Arrays(diziler)" id="1">Arrays(diziler)</option>
+            <option value="View" id="1">View</option>
+        </select>*<br>
+    </div><br>
+<br><br>
+    <div class="bilgi"> 
+            <textarea class="in" name="bilgi" cols="30" rows="5" id="bilgi"placeholder="Bilgi Giriniz" ></textarea><br>
+    </div>
+<br>
+<br>
+    <div class="dosya">
+            <input type="file" class="in" name="dosya" width="30"><br>
+    </div>
+<br>
+<br>
+    <div class="soru"> 
+        <input  name="soru"class="in" type="text" width="30" height="30" id="soru" placeholder="Soru Giriniz"><br>
+    </div>
+<br>
+    <div class="zorluk"> 
+        <select class="in" id="zorluk" name="zorluk">
+            <option value="1" id="1">1</option>
+            <option value="2"id="2">2</option>
+            <option value="3"id="3">3</option>
+        </select><p>Zorluk Seviyesi *</p>
+    </div>
+        <p>Şıklar *</p><br>
+       
+ <div class="a"><p>A-)<input name="a" class="in"type="text"id="a"></div><div class="dogru"><input name="dogru" type="radio"id="r1"value="a"></p></div>
+  <div class="b"><p>B-)<input name="b" class="in"type="text"id="b"></div><div class="dogru"><input name="dogru" type="radio"id="r2"value="b"></p></div>
+   <div class="c"><p>C-)<input name="c" class="in"type="text"id="c"></div><div class="dogru"><input name="dogru" type="radio"id="r3"value="c"></p></div>
+ <div class="d"><p>D-)<input name="d" class="in"type="text"id="d"></div><div class="dogru"><input name="dogru" type="radio"id="r4"value="d"></p></div>
+<form action="" method="get" >
+        <input class="in" type="submit" id="gönder" value="SoruEkle" onclick="form_kontrolu()" >
+        <div class="uyari"></div>
+</form>
+</div>
+</form>
+
+<script>
+
+var bolum;
+var ders;
+var konu;
+var bilgi;
+var soru;
+var zorluk;
+var a;
+var b;
+var c;
+var d;
+var dogru;
+
+ var form_kontrolu=function()
+{
+         $("#formkontrol").on("keyup", function(event)
+    {
+         form_kontrolu();
+    });
+        bolum=$('#bolum').val();
+        ders=$('#ders').val();
+        konu=$('#konu').val();
+        bilgi=$('#bilgi').val();
+        soru=$('#soru').val();
+        zorluk=$('#zorluk').val();
+        a=$('#a').val();
+        b=$('#b').val();
+        c=$('#c').val();
+        d=$('#d').val();
+        dogru=$('input[name=dogru]:checked', '#formkontrol').val();
+
+    
+    if (bolum=="Bolum Seçiniz" )
+        $('.uyari').html("Lütfen Bölüm Seçiniz");
+    else if ( ders=="Ders Seçiniz" )
+        $('.uyari').html("Lütfen Ders Seçiniz");
+    else if ( konu=="Konu Seçiniz" )
+        $('.uyari').html("Lütfen Konu Seçiniz");
+    else if ( soru=="")
+        $('.uyari').html("Soru Boş Bırakılamaz");
+    else if (zorluk=="Zorluk Seviyesi" )
+        $('.uyari').html("Lütfen Zorluk Derecesi Belirleyiniz");
+    else if ( a=="")
+        $('.uyari').html("Şık Boş Bırakılamaz");
+    else if ( b=="")
+        $('.uyari').html("Şık Boş Bırakılamaz");
+    else if ( c=="")
+        $('.uyari').html("Şık Boş Bırakılamaz");
+    else if ( d=="")
+        $('.uyari').html("Şık Boş Bırakılamaz");
+    else if ( dogru==null)
+        $('.uyari').html("Lütfen Doğru Şıkkı İşaretleyiniz");
+    else
+    {
+        $('.uyari').empty();
+         $('#formkontrol').removeAttr('onsubmit');
+    }
+
+}
+
+  
+</script>
+
+

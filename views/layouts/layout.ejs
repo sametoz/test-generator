@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Soru Bankası</title>
+    <!-- Viewport mobile tag for sensible mobile support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" 
+    crossorigin="anonymous">
+    <!--STYLES-->
+    <link rel="stylesheet" href="/styles/importer.css">
+    <!--STYLES END-->
+    <style type="text/css">
+    </style>
+  </head>
+  <body>
+      <nav class="navbar navbar-expand-lg  bg-primary " >
+  <a>HoşGeldiniz</a>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li>
+      <form action="/anasayfa">
+        <input type="submit" class="btn btn-primary" value="Anasayfa" >
+      </form>
+      </li>
+      <li>
+     <form action="/testhazirla"  methot="get">
+            <input type="submit"class="btn btn-primary" value="Test Hazırla">
+        </form>
+        </li>
+        <li>
+        <form action="/sorugir"  methot="get">
+            <input type="submit"class="btn btn-primary" value="Soru Girişi">
+        </form>
+      </li>
+    </ul>
+    
+    <form action="/hakkinda"  methot="get">
+      <input type="submit"class="btn btn-primary" value="Hakkında">
+        </form>
+      
+  </div>
+</nav>
+
+
+
+
+ 
+    <%- body %>
+    <!--SCRIPTS-->
+    <script src="/dependencies/sails.io.js"></script>
+    <!--SCRIPTS END-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" 
+    integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" 
+    crossorigin="anonymous"></script>
+   
+  </body>
+  <body>
+      <style>
+          h2{
+              color:wheat;
+              text-align:center
+          }
+          div.divtwo{
+               width: auto; 
+               height: 80px;
+                background: rgb(58,86,212);
+                 margin: 0 auto;
+                  position:relative;
+              
+          
+            }
+      </style>
+      <div class="divtwo">
+      <h2>Karşılacağınız Herhangi Bir Sorunda İletişim :0216 333 67 89</h2>
+      </div>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<body >
+    
+</body>
+<style> 
+
+     body{
+         background-color:#F5F5DC;
+    } 
+    p{
+     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    }
+    input.in{
+    margin:initial;
+    width: 20%;
+    height: 30%;
+    padding: 5px;
+    outline-width: 1px;
+      outline-color: black;
+      outline-style:ridge;
+    }
+    textarea{
+        
+    outline-width: 1px;
+    outline-color: black;
+    outline-style:ridge;
+    }
+    div.container{
+    background: #FFE4C4;
+    position:unset;        
+    width: 70%;
+    border: 5px solid lightblue;
+    padding: 50px;
+        outline-width: 0px;
+      outline-color: black;
+      outline-style:auto;}
+    
+</style>
+<form action="listele" method="get">
+<div  class="container" >
+<select>
+<% sonuc.forEach(function(data) { %>
+
+ <option><%= data.bolumAdi %></option>
+ 
+<% }) %>
+</select><br><br>
+
+
+<select class="in">
+        <option value="25" id="25">25</option>
+        <option value="33" id="33">33</option>
+        <option value="20" id="20">20</option>
+</select><br><p>Soru Sayısı Belirleyiniz.</p><br>
+    <select class="in">
+    <option value="1" id="1">1</option>
+    <option value="2"id="2">2</option>
+    <option value="3"id="3">3</option>
+</select><p>Zorluk Seviyesi *</p><br>  
+<select class="in">
+        <option value="1"id="1">1</option>
+        <option value="2"id="2">2</option>
+        <option value="3"id="3">3</option>
+        <option value="4"id="4">3</option>
+    </select><p>Sınavın Kaç Grup Olacağını Belirleyiniz. *</p><br>  
+
+        <input class="in" type="submit" id="gönder" value="Sınav Hazırla" >
+    
+</div>
+</form>
+
+<script>
+
+</script>
